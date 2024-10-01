@@ -27,8 +27,8 @@
                         <td style="padding: 10px;">{{ $book->price }}</td>
                         <td style="padding: 10px;">{{ $book->isbn }}</td>
                         <td style="padding: 10px;">
-                            <a  style="margin-right: 5px;" href="{{ route('books.show', $book->id) }}"> <i class="fa-solid fa-circle-info "></i></a>
-                            <a  style="margin-right: 5px;" href="{{ route('books.edit', $book->id) }}"> <i class="fa-solid fa-pen-to-square "></i></a>
+                            <a class="btn btn-info" style="margin-right: 5px;" href="{{ route('books.show', $book->id) }}"> <i class="fa-solid fa-circle-info "></i></a>
+                            <a class="btn btn-warning" style="margin-right: 5px;" href="{{ route('books.edit', $book->id) }}"> <i class="fa-solid fa-pen-to-square "></i></a>
                             <button class="btn-delete btn btn-danger btn-sm" data-title="{{ $book->title }}" data-id="{{ $book->id }}" style="margin-right: 5px;">Delete</button>
                         </td>
                     </tr>
@@ -36,7 +36,7 @@
             </tbody>
         </table>
     </div>
-
+<br>
     <div class="d-flex justify-content-center mt-2">
         {{ $books->links() }}
     </div>

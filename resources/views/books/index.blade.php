@@ -68,6 +68,11 @@
     </style>
     {{ $books->links() }}
 </div>
+
+ <div class="footer">
+<p>This is footer</p>
+    </div>
+
 @endsection
 
 @section('scripts')

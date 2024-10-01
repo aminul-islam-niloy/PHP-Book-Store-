@@ -37,7 +37,7 @@
         </table>
     </div>
 
-    <div class="d-flex justify-content-center">
+    <div class="d-flex justify-content-center mt-2">
         {{ $books->links() }}
     </div>
 </div>

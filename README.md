@@ -9,6 +9,8 @@ if you clone : git clone: link;
     composer update
     composer install
     create .env file and create a secret key 
+    
+    php artisan key:generate
 
 4. ToRun with different port:  php artisan serve --port=8080
 5. edit env file:
@@ -61,6 +63,31 @@ in down section:
 if i want to add new column: create new migration and add:   $table->timestamp('published_at')->nullable();
 in down section:  $table->dropColumn('published_at');
       php artisan migrate
+
+
+10. To generate test seed :  if not create before: php artisan make:seeder emplyeeSeeder
+    go to factory and in Emplyee:
+    public function definition()
+    {
+        return [
+           "name"=> $this->faker->name(),
+            "job_title"=> $this->faker->jobTitle(),
+            'joining_date'=>$this->faker->date(),
+            'salary'=>$this->faker->randomFloat($nbMaxDecimals = 2, $min = 1000, $max = 10000),
+            "email"=> $this->faker->safeEmail(),
+            "mobile_no"=> $this->faker->phoneNumber(),
+            "address"=> $this->faker->address()
+        ];
+    }
+
+    on Seeder class:
+    Database seeder:  public function run()
+    {    employee::truncate();
+         employee::factory(100)->create();
+    }
+    
+  run:   php artisan db:seed
+
 
 10. Crete and CRUD operation on controller
 11. configure routes on : routes/web.php

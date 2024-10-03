@@ -142,6 +142,11 @@ php artisan db:seed
 To remove table: Trancate tablename
 
 
+php artisan make:controller EmployeeController
+in route file: web.php:
+Route::resource('employees', EmployeeController::class);
+
+
 12: Create Blade Views
 
 create folder books inside resourses/view  
